@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>First Script</title>
+    </head>
+    <body>
+        <script type= "text/javascript"> 
+            var today = new Date();
+            var day = today.getDay();
+            var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+            document.writeln("Today is : " + daylist[day] + ".");
+            document.write("<br/>");
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+            document.writeln("Current time is: "+ hour + ":"+minute+":"+second);
+        </script>
+    </body>
+</html>
