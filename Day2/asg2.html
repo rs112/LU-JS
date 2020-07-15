@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Difference</title>
+</head>
+<body>
+        <h1>Difference between var, let and const</h1>
+        <ol><h2>
+        <li>var declarations are globally scoped or function scoped while let and const are block scoped.</li>
+        <li>var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.</li>
+        <li>They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.</li>
+        <li>While var and let can be declared without being initialized, const must be initialized during declaration.</li>
+        </h2></ol>
+        <h3>
+        <script type="text/javascript">
+            document.writeln("num1 with global scope");
+            var num1 = 10;
+            document.writeln(num1);
+            document.write("<br/>");
+            document.writeln("num2 constant with global scope");
+            const num2 = 20;
+            document.writeln(num2);
+            document.write("<br/>");
+            function a(){
+                document.writeln(" let changes num1 to 15 with only local scope");
+                let num1 = 15;
+                document.writeln(num1);
+            }
+            //prints 10 as its in global scope
+            a();
+            document.write("<br/>");
+            document.writeln("num1 as global");
+            document.writeln(num1);
+            
+        </script>
+        </h3>
+</body>
+</html>
