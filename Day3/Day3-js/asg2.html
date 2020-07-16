@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array & string Methods</title>
+</head>
+<body>
+    <h1>String Remaining Methods</h1>
+    <script>
+        var str = "Welcome to LU World!";
+        var res = str.substring(0, 8);
+        document.writeln("Original String is: ", str);
+        document.writeln("<br/>");
+
+        var res = str.substring(0, 8);
+        document.writeln("1)Substring(): ");
+        document.writeln("<br/>");
+        document.writeln("Substring is: ", res);
+        document.writeln("<br/>");
+
+        var res1 = str.slice(0, 8);
+        document.writeln("2)slice(): ");
+        document.writeln("<br/>");
+        document.writeln("After slicing new string is: ", res1);
+        document.writeln("<br/>");
+
+        var res2 = str.replace("World", "Community");
+        document.writeln("3)replace(): ");
+        document.writeln("<br/>");
+        document.writeln("After replacing new string is: ", res2);
+
+        console.log("Array remaining Methods");
+        let arr = ['a', 'b', 'c', 'd'];
+        let arr2 = [1, 2, 3, 4];
+        console.log(arr);
+
+
+        console.log(Array.isArray(arr));
+
+        
+        console.log(arr2[3]);
+
+        console.log(arr.concat(arr2));
+
+        console.log(arr.reverse());
+
+        arr2.unshift('0');
+        console.log(arr2);
+    </script>
+</body>
+</html>
