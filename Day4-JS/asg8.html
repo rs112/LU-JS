@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que8</title>
+</head>
+<body>
+   <script>
+       function ask(question, yes, no){
+           if(confirm(question)) yes()
+           else no();
+       }
+       ask("Do you agree?", yes=>{alert("You agreed");}, no=>{alert("You cancelled the execution");});
+   </script> 
+</body>
+</html>

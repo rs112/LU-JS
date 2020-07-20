@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que7</title>
+</head>
+<body>
+    <script>
+        function primeto(num){
+            for (var counter = 2; counter <= num; counter++) {    
+                var notPrime = false;
+                for (var i = 2; i <= counter; i++) {
+                    if (counter%i===0 && i!==counter) {
+                        notPrime = true;
+                    }
+                }
+                if (notPrime === false) {
+                            console.log(counter);
+                }
+                }
+        }
+        var num = prompt("Enter number upto which you want prime numbers");
+        primeto(num);
+    </script>
+</body>
+</html>

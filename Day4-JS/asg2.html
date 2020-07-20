@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques2</title>
+</head>
+<body>
+    <script>
+        console.log("object");
+        const student = {
+            name: "Helsinki",
+            age: 24,
+            projects: {
+                dicegame: "Two player dicegame using JavaScript"
+            }
+        };
+
+        function whois({name,age, projects: {dicegame: projects}}){
+            return `His name is ${name} and he is ${age} and they are playing  ${projects}`;
+        }
+        console.log(whois(student));
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que5</title>
+</head>
+<body>
+    <script>
+        let com = prompt("Enter sales");
+        if(com >= 0 && com <= 5000){
+            let sales = com * 0.02;
+            console.log("Commission is: ",sales);
+        }else if(com >= 5001 && com <= 10000){
+            sales = (5001 * 0.02)+((com -5001) * 0.05);
+            console.log(`Commission is: ${sales}`);
+        }else if(com >= 10001 && com <= 20000){
+            sales = (5001 * 0.02)+(5001 * 0.05)+((com -10001) * 0.07);
+            console.log("Commission is: ",sales);
+        }else{
+            sales = (5001 * 0.02)+(5001 * 0.05)+((10001 * 0.07)+((com - 20000) * 0.1));
+            console.log("Commission is: ",sales);           
+        }
+
+    </script>
+</body>
+</html>

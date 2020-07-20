@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que4</title>
+</head>
+<body>
+    <script>
+        function add(a ,b){
+            return a + b;
+        }
+        function sub(a ,b){
+            return a - b;
+        }
+        function mul(a ,b){
+            return a * b;
+        }
+        function div(a ,b){
+            return a / b;
+        }
+        function sqrt(a){
+            return Math.sqrt(a);
+        }
+        do{
+        var op = prompt("Opertaions: \n1.Addition \n2.Substraction \n3.Multiplication \n4.Division \n5.Sqaure Root\n Enter your choice:");
+        var n1 = parseInt(prompt("Enter Number1"));
+        var n2 = parseInt(prompt("Enter Number2"));
+        switch(true){
+            case (op == 1):
+                var n3 = add(n1, n2);
+                var num3 = alert('Addition is '+ n3);
+                break;
+            case (op == 2):
+                var n3 = sub(n1, n2);
+                var num3 = alert('Subtraction is '+ n3);
+                break;
+            case (op == 3):
+                var n3 = mul(n1, n2);
+                var num3 = alert('Multiplication is '+ n3);
+                break;
+            case (op == 4):
+                var n3 = div(n1, n2);
+                var num3 = alert('Division is '+ n3);
+                break;
+            case (op == 5):
+                var n3 = sqrt(n1);
+                var n4 = sqrt(n2);
+                var num3 = alert("Square roots of "+n1+" & "+ n2 +" are "+ n3 +" & "+ n4);
+                break;
+            
+            default:
+                if(op < 5){
+                alert("Enter valid choice");
+                }
+                break;
+        }
+        }while(op <= 5);
+    </script>
+</body>
+</html>
