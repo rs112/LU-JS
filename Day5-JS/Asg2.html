@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asg2</title>
+</head>
+<body>
+    <script>
+    class User {
+        constructor(name, age,email) {
+          this.name = name;
+          this.age = age;
+          this.email = email;
+        }
+    
+        static greet(){
+            console.log("Hello There");
+        }
+        login(){
+            console.log(`${this.name} has logged in`);
+            return this;
+        }
+        logout(){
+            console.log(`${this.name} has logged out`);
+            return this;
+        }
+      
+        getDetails(){
+            console.log(`Name is ${this.name}, email is ${this.email}`);
+            return this;
+        }
+    
+    }
+    
+    class Moderator extends User{
+        constructor(name,age,email,role){
+            super(name,age,email);
+            this.role = role;
+            this.luCoins = 0;
+            this.courses = [];
+        }
+        addCoins(){
+            this.luCoins++;
+            console.log(`${this.name} has ${this.luCoins} coins`);
+            return this;
+        }
+        removeCoins = function(accountHolder, coin) {
+            accountHolder.luCoins -= coin;
+            console.log(`${accountHolder.name} has ${accountHolder.luCoins} coins`);
+            return this;
+        }
+
+    }
+    
+    class Admin extends Moderator{
+       addCourse(user, course){
+           user.courses.push(course);
+           console.log(`user has added ${course}`);
+          // return this;
+       }
+       delcourse(user, course){
+           user.courses = user.courses.filter(courses => courses!== course);
+           console.log(`user has successfully deleted ${course}`);
+          // return this;
+       }
+    }
+    
+    
+    let user1 = new User('Rakesh',19,'rs@gmail.com')
+    let user2 = new User('Rohit',21,'r@gmai.com')
+    let mod = new Moderator('RS',22,'rs112@gmail.com','Moderator');
+    let admin = new Admin('Raj',23,'ra@gmail.com');
+    let users = [user1,user2,mod,admin];
+    
+    users.forEach(element => {
+        console.log(element);
+    });
+    
+    User.greet();
+    admin.addCourse(user1,'Javascript');
+    admin.delcourse(user1,'Javascript');
+    console.log("Course deleted");
+    
+    
+    //user1.login()
+    // user1.addCoins();
+    // user1.addCoins();
+    // user1.addCoins();
+    // user1.logout()
+    
+    // user1.login().addCoins().addCoins().getDetails().logout();
+    
+    // mod.deleteUser(user1);
+    // console.log(users);
+</script>    
+</body>
+</html>
