@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asg2</title>
+</head>
+<style>
+#dark {
+    padding: 10px 10px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: lightseagreen;
+}
+</style>
+<body>
+    <button id="dark">Switch to Dark Mode</button>
+    <h4 id="time"></h4>
+    <br>
+    <script>
+        var user = prompt("Enter your name");
+        document.write("Welcome "+ user+ " !! Have a nice day");
+
+        /*function turnDark(){
+            var element = document.body;
+            element.classicList.toggle("dark-mode");
+        }*/
+        const ctime = document.getElementById('time');
+
+
+        function clock(){
+            let date = new Date();
+            let time = date.toLocaleTimeString();
+            ctime.innerText = time;
+        }
+
+         //clock();
+
+        setInterval(clock,1000);
+
+        const dmode = document.getElementById('dark');
+
+        dmode.onclick = function changeColor(){
+    
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
+        document.body.style.fontFamily = 'Helvetica';
+   
+}
+    </script>
+</body>
+</html>
