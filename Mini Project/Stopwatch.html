@@ -1,0 +1,94 @@
+<html>
+<head><title>Stopwatch</title></head>
+<style>
+   body {
+       
+       background-color: black;
+       color: white;
+   }
+   h1{
+       font-size: xx-large;
+       padding-left: 40px;
+   }
+   button{
+       font-size: x-large;
+       border: solid 2px;
+       border-color: blue;
+       border-radius: 3px;
+   }
+   
+  .center{
+      align-items: center;
+      margin: auto;
+      padding: 350px 800px;
+
+  }
+  h1:hover{
+      color:violet;
+  }
+  p{
+      color: white;
+      font-size: xx-large;
+      padding-left: 30px;
+  }
+  p:hover{
+      color: red;
+  }
+</style>
+<body>
+    <div class="center">
+    <p><b>Stopwatch</b></p>
+    <h1><time></time></h1>
+<button style="background-color: green; color: white;" id="start">start</button>
+<button style="background-color: red; color: white;" id="stop">stop</button>
+<button style="background-color: white; color: black;" id="clear">clear</button>
+
+<script>
+    var h1 = document.getElementsByTagName('h1')[0];
+    var start = document.getElementById('start');
+    var stop = document.getElementById('stop');
+    var clear = document.getElementById('clear');
+    var t;
+    var seconds = prompt("Enter seconds");
+    var minutes = prompt("Enter minutes");
+    var hours = prompt("Enter hours");
+    
+    h1.textContent =  (hours ? (hours > 9 ? hours : "0" + hours): "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00");
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    
+    h1.textContent = (hours ? (hours > 9 ? hours : "0" + hours): "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00");
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+//timer();
+
+
+/* Start button */
+start.onclick = timer;
+
+/* Stop button */
+stop.onclick = function() {
+    clearTimeout(t);
+}
+
+/* Clear button */
+clear.onclick = function() {
+    h1.textContent = "00:00:00";
+    seconds = 0; minutes = 0; hours = 0;
+}
+</script>
+</div>
+</body>
+</html>
